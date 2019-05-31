@@ -57,12 +57,18 @@ var app = {
         	alert(data.registrationId);
             console.log('registration event: ' + data.registrationId);
 
-            var oldRegId = localStorage.getItem('registrationId');
-            if (oldRegId !== data.registrationId) {
-                // Save new registration ID
-                localStorage.setItem('registrationId', data.registrationId);
-                // Post registrationId to your app server as the value has changed
-            }
+             var id = localStorage.getItem('Id');
+           var xmlhttp=new XMLHttpRequest();
+           
+
+           if (oldRegId != data.registrationId || id!=null ) {
+               // Save new registration ID
+               localStorage.setItem('registrationId', data.registrationId);
+               // Post registrationId to your app server as the value has changed
+               var urlToken="https://siesoluciones.com/tickets2/movil/ajaxGuardarToken.php?idUsu="+id+"&token="+oldRegId;
+               xmlhttp.open("GET",urlToken,true);
+			   xmlhttp.send();
+			   }
 
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
