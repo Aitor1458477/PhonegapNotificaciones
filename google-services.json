@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "935375552074",
+    "firebase_url": "https://phonegapfcm-6ac5f.firebaseio.com",
+    "project_id": "phonegapfcm-6ac5f",
+    "storage_bucket": "phonegapfcm-6ac5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935375552074:android:215642ed9f5b53a2",
+        "android_client_info": {
+          "package_name": "sie.phonegap.fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935375552074-6vt8q75rhal0mihbqr53c2guaoidersi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2_lkYT0VPqB5Qx2j0cfhBR4IXgXr1FEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935375552074-6vt8q75rhal0mihbqr53c2guaoidersi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
