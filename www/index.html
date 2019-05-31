@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
     Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
 
@@ -43,13 +43,15 @@
 </head>
 
 <body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="registration" class="blink">
-            <p class="event waiting">Requesting Registration ID</p>
-            <p class="event received">Registered</p>
-        </div>
-    </div>
+       <div id="dAjax">Respuesta: </div>
+    <div id="principal" class="app">
+    	<form id="formulario">
+    	<label class="login" id="cosa">Usuario</label><input id="User" type="text" /><br/> 
+    	<label class="login" >Contraseña</label> <input  id="Pass" type="password" size="20" /><br/>  	
+		<input type="button" onclick="loadXMLDoc()" id="btn" value="Login"/>
+		</form>
+</div>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">

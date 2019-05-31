@@ -87,3 +87,73 @@ var app = {
        });
     }
 };
+
+function loadXMLDoc(){
+	//2 - Recepción de la llamada
+	var xmlhttp=new XMLHttpRequest();
+	//var sharedPreferences = nuevo.plugins.SharedPreferences.getInstance("Login");
+	var successCallback = function() {
+    	console.log('OK');
+	}
+	var errorCallback = function(err) {
+    	console.error(err);
+	}	
+
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			//Trabajar respuesta
+			if (xmlhttp.responseText == 0){
+			document.getElementById("dAjax").innerHTML=xmlhttp.responseText;
+			alert("usuario y/o contraseña incorrectos");
+			
+			document.getElementById("User").value="";
+			document.getElementById("Pass").value="";
+			}
+			else{
+			document.getElementById("dAjax").innerHTML=xmlhttp.responseText;
+			//sharedPreferences.put('Usuario', user, successCallback, errorCallback);
+			//sharedPreferences.put('Contrasena', pass, successCallback, errorCallback);
+			//sharedPreferences.put('Id', xmlhttp.responseText, succesCallback, errorCallback);
+			localStorage.setItem("Usuario", user);
+			localStorage.setItem("Clave", pass);
+			localStorage.setItem("Id", xmlhttp.responseText)
+			window.open("https://siesoluciones.com/tickets2/movil/index2.php?usuario="+user+"&clave="+pass, "_blank", "location=no");
+
+		    var oldRegId = localStorage.getItem('registrationId');
+            var id = localStorage.getItem('Id');
+            var urlToken="https://siesoluciones.com/tickets2/movil/ajaxGuardarToken.php?idUsu="+id+"&token="+oldRegId;
+
+            if (oldRegId != data.registrationId || id!=null ) {
+            	alert("hola");
+               // Save new registration ID
+               localStorage.setItem('registrationId', data.registrationId);
+               // Post registrationId to your app server as the value has changed
+               xmlhttp.open("GET",urlToken,true);
+			   xmlhttp.send();
+
+            }
+
+			}
+		}
+	}
+
+
+	//1 - Envio de la llamada
+	var user = document.getElementById("User").value;
+	var pass = document.getElementById("Pass").value;
+	var url = "http://siesoluciones.com/funcionesPHP/funcionesAndroid.php?login=1&usuario=" + user + "&clave=" + pass;	
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+};
+
+function Automatico(){
+	var user = localStorage.getItem("Usuario");
+	var pass = localStorage.getItem("Clave");
+	if(user!=null || pass!=null){
+
+		window.open("https://siesoluciones.com/tickets2/movil/index2.php?usuario="+user+"&clave="+pass, "_blank", "location=no");
+	}
+	 
+};
+
+
