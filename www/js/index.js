@@ -36,6 +36,7 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
+        Automatico();
     },
     setupPush: function() {
         console.log('calling push init');
@@ -57,7 +58,7 @@ var app = {
         	alert(data.registrationId);
             console.log('registration event: ' + data.registrationId);
 
-             var id = localStorage.getItem('Id');
+           var id = localStorage.getItem('Id');
            var xmlhttp=new XMLHttpRequest();
            
 
