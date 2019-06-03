@@ -86,13 +86,14 @@ var app = {
 
         push.on('notification', function(data) {
             console.log('notification event');
-            navigator.notification.alert(
+            /*navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
-              // window.open("https://siesoluciones.com/tickets2/movil/notificaciones.php", "_blank", "location=no");
-            );
+            );*/
+            window.open("https://siesoluciones.com/tickets2/movil/notificaciones.php", "_blank", "location=no");
+
        });
     }
 };
