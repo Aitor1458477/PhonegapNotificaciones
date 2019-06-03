@@ -62,7 +62,7 @@ var app = {
            var xmlhttp=new XMLHttpRequest();
            var oldRegId= localStorage.getItem('registrationId');
 
-           if (oldRegId != data.registrationId || id!=null ) {
+           if (oldRegId != data.registrationId && id!=null ) {
                // Save new registration ID
                alert("hola");
                localStorage.setItem('registrationId', data.registrationId);
@@ -86,11 +86,12 @@ var app = {
 
         push.on('notification', function(data) {
             console.log('notification event');
-            navigator.notification.alert(
+            /*navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
-                'Ok'                  // buttonName
+                'Ok'                  // buttonName*/
+               window.open("https://siesoluciones.com/tickets2/movil/notificaciones.php", "_blank", "location=no");
             );
        });
     }
